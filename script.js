@@ -53,7 +53,7 @@ function displayBooks(){
                 let bookBeenRead=document.createElement("td");
                 bookBeenRead.innerText=`${library[i].haveReadYet}`;
                 let readBookButton=document.createElement("button");
-                removeButtons.inneerText="Change read state";
+                readBookButton.innerText="Change read state";
                 readBookButton.addEventListener("click",()=>{
                     library[i].toggleReadStatus();
                 });
@@ -80,9 +80,10 @@ addNewBook.addEventListener("click",(event)=>{
     let bookFormData=new FormData(newBookForm);
     let newBookData=Object.fromEntries(bookFormData);
     addBookToLibrary(bookFormData.get("book-title"),bookFormData.get("book-author"),bookFormData.get("page-number"),bookFormData.get("rad-book"));
+    displayBooks();
 
 });
-let removeButtons=Array.from(document.querySelectorAll(".remove-button"));
+let removeButtons=Array.from(document.querySelectorAll(".remove-book"));
 removeButtons.forEach((removeButton)=>{
     removeButton.addEventListener("click",()=>{
         let tableRows=Array.from(document.querySelectorAll("tr"));
