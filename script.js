@@ -2,8 +2,8 @@ function Book(title,author,numPages,haveReadYet){
     this.title=title;
     this.author=author;
     this.numPages=numPages;
-    this.haveReadYet=haveYeadYet?"yes":"no";
-    this.bookId=Crypto.prototype.randomUUID();
+    this.haveReadYet=haveReadYet?"yes":"no";
+    this.bookId=crypto.randomUUID();
 }
 Book.prototype.toggleReadStatus=function(){
     if(this.haveReadYet==="yes"){
@@ -75,8 +75,8 @@ function displayBooks(){
 }
 let addNewBook=document.querySelector(".new-book");
 let newBookForm=document.querySelector("form");
-addNewBook.book.addEventListener("click",()=>{
-    Event.preventDefault();
+addNewBook.addEventListener("click",(event)=>{
+    event.preventDefault();
     let bookFormData=new FormData(newBookForm);
     let newBookData=Object.fromEntries(bookFormData);
     addBookToLibrary(bookFormData.get("book-title"),bookFormData.get("book-author"),bookFormData.get("page-number"),bookFormData.get("rad-book"));
