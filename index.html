@@ -8,10 +8,24 @@
 </head>
 <body>
     <h1>Welcome to the library</h1>
-    <button class="add-book">Add a book</button>
+    <button class="add-book" command="show-modal" commandfor="add-book-dialog">Add a book</button>
+    <dialog id="add-book-dialog">
+        <form class="add-book-form" method="post " action="">
+            <label for="book-title">Book Title:</label>
+            <input type="text" name="book-title" id="book-tiutle">
+            <label for="book-author">Author:</label>
+            <input type="text" name="book-author" id="book-author">
+            <label for="page-number">Number of pages:</label>
+            <input type="number" name="page-number" id="page-number" min="1">
+            <label for="read-book">I have read this book before</label>
+            <input type="checkbox" name="read-book" id="read-book">
+            <button class="new-book">Submit</button>
+            <button command="Close" commandfor="add-book-dialog">Close</button>
+        </form>
+    </dialog>
     <table>
         <thead>
-            <tr>
+            <tr id="heading">
                 <th scope="col">Title</th>
                 <th scope="col">Author</th>
                 <th scope="col">Number of Pages</th>
@@ -20,7 +34,7 @@
             </tr>
         </thead>
         <tbody class="table-body">
-            
+
         </tbody>
     </table>
 </body>
