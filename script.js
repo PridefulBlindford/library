@@ -52,13 +52,16 @@ function displayBooks(){
             }
             else if(j===4){
                 let bookBeenRead=document.createElement("td");
-                bookBeenRead.innerText=`${library[i].haveReadYet}`;
+                let readStatusSpan=document.createElement("span");
+                readStatusSpan.innerText=`${library[i].haveReadYet}`;
                 let readBookButton=document.createElement("button");
                 readBookButton.innerText="Change read state";
                 readBookButton.addEventListener("click",()=>{
                     library[i].toggleReadStatus();
-               bookBeenRead.innerText=`${library[i].haveReadYet}`;     
+                    readStatusSpan.innerText=`${library[i].haveReadYet}`;     
                 });
+                bookBeenRead.appendChild(readStatusSpan);
+
                 bookBeenRead.appendChild(readBookButton);
                 tableRow.appendChild(bookBeenRead);
             }
