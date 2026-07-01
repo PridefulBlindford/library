@@ -7,7 +7,7 @@ function Book(title,author,numPages,haveReadYet){
 }
 Book.prototype.toggleReadStatus=function(){
     if(this.haveReadYet==="yes"){
-        thisReadYet="no";
+        this.haveReadYet="no";
     }
     else{
         this.haveReadYet="no";
