@@ -11,16 +11,27 @@
     <button class="add-book" command="show-modal" commandfor="add-book-dialog">Add a book</button>
     <dialog id="add-book-dialog">
         <form class="add-book-form" method="post " action="">
-            <label for="book-title">Book Title:</label>
-            <input type="text" name="book-title" id="book-tiutle">
-            <label for="book-author">Author:</label>
-            <input type="text" name="book-author" id="book-author">
-            <label for="page-number">Number of pages:</label>
-            <input type="number" name="page-number" id="page-number" min="1">
-            <label for="read-book">I have read this book before</label>
-            <input type="checkbox" name="read-book" id="read-book">
+            <div>
+                <label for="book-title">Book Title:</label>
+                <input type="text" name="book-title" id="book-title">
+            </div>
+            <div>
+                <label for="book-author">Author:</label>
+                <input type="text" name="book-author" id="book-author">
+            </div>
+            <div>
+                <label for="page-number">Number of pages:</label>
+                <input type="number" name="page-number" id="page-number" min="1">
+            </div>
+            <div>
+                <label for="read-book">I have read this book before</label>
+                <input type="checkbox" name="read-book" id="read-book">
+            </div>
+            <div>
+
             <button class="new-book">Submit</button>
-            
+                
+            </div>
         </form>
         <button command="Close" commandfor="add-book-dialog">Close</button>
     </dialog>

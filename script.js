@@ -7,10 +7,11 @@ function Book(title,author,numPages,haveReadYet){
 }
 Book.prototype.toggleReadStatus=function(){
     if(this.haveReadYet==="yes"){
-        this.haveReadYet="no";
+        thisReadYet="no";
     }
     else{
         this.haveReadYet="no";
+        return;
     }
 }
 let library=[];
@@ -56,6 +57,7 @@ function displayBooks(){
                 readBookButton.innerText="Change read state";
                 readBookButton.addEventListener("click",()=>{
                     library[i].toggleReadStatus();
+               bookBeenRead.innerText=`${library[i].haveReadYet}`;     
                 });
                 bookBeenRead.appendChild(readBookButton);
                 tableRow.appendChild(bookBeenRead);
